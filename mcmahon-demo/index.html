@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Nana G. McMahon, MD — Pediatrics in Concord, MA</title>
+<meta name="description" content="Board-certified pediatrician serving Concord, MA since 1987. Dr. Nana G. McMahon offers well-child visits, sick care, vaccinations, and telehealth. Book online today.">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #3d5442;
+    --navy-mid: #5b7a62;
+    --gold: #5b7a62;
+    --gold-light: #e8f0ea;
+    --cream: #faf9f7;
+    --white: #ffffff;
+    --text: #1c2319;
+    --text-mid: #4a5548;
+    --text-light: #7a8a76;
+    --border: #dde6da;
+    --green: #3d5442;
+    --green-light: #e8f0ea;
+    --accent: #c67c4e;
+  }
+
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    color: var(--text);
+    background: var(--cream);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAV ── */
+  nav {
+    background: var(--navy);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .nav-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 32px;
+    height: 66px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-brand { text-decoration: none; }
+  .nav-brand .brand-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 19px;
+    font-weight: 400;
+    color: #fff;
+    display: block;
+    line-height: 1.1;
+  }
+  .nav-brand .brand-sub {
+    font-size: 11px;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
+  .nav-links a {
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.7);
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: #fff; }
+
+  .nav-cta {
+    background: rgba(255,255,255,0.15) !important;
+    color: #fff !important;
+    padding: 9px 20px;
+    border-radius: 100px !important;
+    font-weight: 600 !important;
+    border: 1.5px solid rgba(255,255,255,0.4) !important;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: rgba(255,255,255,0.25) !important; }
+
+  /* ── AWARD BANNER ── */
+  .award-banner {
+    background: var(--navy-mid);
+    padding: 10px 32px;
+    text-align: center;
+  }
+  .award-banner p {
+    font-size: 13px;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: 0.04em;
+  }
+  .award-banner span { opacity: 0.85; font-weight: 400; }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--cream);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 480px; height: 480px;
+    background: radial-gradient(circle, rgba(91,122,98,0.1) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--navy) 0%, transparent 60%);
+  }
+
+  .hero-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 80px 32px 88px;
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 64px;
+    align-items: center;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--green-light);
+    color: var(--navy);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 100px;
+    margin-bottom: 22px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .hero-eyebrow .pulse {
+    width: 6px; height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+  h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 54px;
+    font-weight: 400;
+    line-height: 1.1;
+    color: var(--text);
+    margin-bottom: 16px;
+    letter-spacing: -0.3px;
+  }
+  h1 em { font-style: italic; color: var(--navy-mid); }
+
+  .hero-desc {
+    font-size: 18px;
+    color: var(--text-mid);
+    line-height: 1.7;
+    margin-bottom: 36px;
+    font-weight: 300;
+    max-width: 500px;
+  }
+
+  .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+  .btn-gold {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--navy);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 13px 28px;
+    border-radius: 100px;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 4px 20px rgba(61,84,66,0.3);
+  }
+  .btn-gold:hover { background: var(--green); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(61,84,66,0.35); }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+    padding: 12px 24px;
+    border-radius: 100px;
+    border: 1.5px solid var(--border);
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .btn-ghost:hover { border-color: var(--navy); background: var(--green-light); }
+
+  .hero-trust {
+    margin-top: 36px;
+    display: flex;
+    gap: 28px;
+  }
+  .trust-item { text-align: left; }
+  .trust-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--text);
+    display: block;
+  }
+  .trust-label { font-size: 12px; color: var(--text-light); letter-spacing: 0.04em; }
+
+  /* Hero booking card */
+  .hero-card {
+    background: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 24px 64px rgba(0,0,0,0.35);
+  }
+
+  .hero-card-header {
+    background: var(--navy);
+    padding: 20px 24px;
+  }
+  .hero-card-header h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    color: #fff;
+    font-weight: 400;
+    margin-bottom: 4px;
+  }
+  .hero-card-header p { font-size: 13px; color: rgba(255,255,255,0.6); }
+
+  .hero-card-body { padding: 24px; }
+
+  .info-row {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    font-size: 13px;
+    color: var(--text-mid);
+    margin-bottom: 14px;
+  }
+  .info-row .icon { font-size: 15px; flex-shrink: 0; margin-top: 1px; }
+
+  .card-divider { height: 1px; background: var(--border); margin: 18px 0; }
+
+  .card-book-btn {
+    width: 100%;
+    padding: 13px;
+    background: var(--navy);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .card-book-btn:hover { background: var(--green); }
+
+  .social-logins {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 12px;
+  }
+  .social-btn {
+    padding: 10px;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    background: var(--white);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .social-btn:hover { border-color: var(--navy); background: var(--green-light); }
+  .social-btn svg { width: 15px; height: 15px; }
+
+  .card-portal-label {
+    text-align: center;
+    font-size: 11px;
+    color: var(--text-light);
+    margin-top: 10px;
+  }
+
+  /* ── QUICK FACTS ── */
+  .facts-band { background: var(--white); border-bottom: 1px solid var(--border); }
+  .facts-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 36px 32px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  .fact-item { display: flex; gap: 14px; align-items: center; }
+  .fact-icon { font-size: 26px; flex-shrink: 0; }
+  .fact-text .fact-val {
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--text);
+    display: block;
+  }
+  .fact-text .fact-lab { font-size: 13px; color: var(--text-light); }
+
+  /* ── SECTIONS ── */
+  section { padding: 88px 32px; }
+  .section-inner { max-width: 1120px; margin: 0 auto; }
+  .section-tag {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--navy-mid);
+    margin-bottom: 10px;
+    display: block;
+  }
+  h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 40px;
+    font-weight: 400;
+    color: var(--text);
+    line-height: 1.15;
+    margin-bottom: 14px;
+  }
+  .section-sub {
+    font-size: 17px;
+    color: var(--text-mid);
+    line-height: 1.65;
+    font-weight: 300;
+    max-width: 520px;
+  }
+  .section-header { margin-bottom: 52px; }
+  .section-header.centered { text-align: center; }
+  .section-header.centered .section-sub { margin: 0 auto; }
+
+  /* ── SERVICES ── */
+  .services { background: var(--cream); }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+  .svc-card {
+    background: var(--white);
+    border: 1.5px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+    text-decoration: none;
+    display: block;
+    color: inherit;
+  }
+  .svc-card:hover {
+    border-color: var(--navy);
+    box-shadow: 0 12px 40px rgba(61,84,66,0.12);
+    transform: translateY(-3px);
+  }
+  .svc-icon {
+    width: 44px; height: 44px;
+    background: var(--green-light);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+    margin-bottom: 14px;
+  }
+  .svc-card h3 { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 8px; }
+  .svc-card p { font-size: 14px; color: var(--text-mid); line-height: 1.6; font-weight: 300; }
+  .svc-link {
+    display: inline-flex; align-items: center; gap: 4px;
+    font-size: 13px; font-weight: 600; color: var(--navy);
+    margin-top: 12px; text-decoration: none;
+  }
+
+  /* ── ABOUT / TEAM ── */
+  .about { background: var(--white); }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: start;
+  }
+  .about-left h2 { text-align: left; }
+  .about-left p {
+    font-size: 15px; color: var(--text-mid); line-height: 1.75; margin-bottom: 14px; font-weight: 300;
+  }
+
+  .award-callout {
+    background: var(--green-light);
+    border-left: 3px solid var(--navy);
+    border-radius: 0 6px 6px 0;
+    padding: 16px 20px;
+    margin: 20px 0;
+  }
+  .award-callout p { font-size: 14px; color: var(--text); line-height: 1.55; margin: 0; }
+  .award-callout strong { color: var(--navy); }
+
+  .team-cards { display: flex; flex-direction: column; gap: 20px; }
+  .team-card {
+    background: var(--cream);
+    border: 1.5px solid var(--border);
+    border-radius: 16px;
+    padding: 22px;
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+  }
+  .team-avatar {
+    width: 60px; height: 60px; border-radius: 50%;
+    background: var(--navy);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px; color: #fff; font-weight: 400;
+    flex-shrink: 0;
+  }
+  .team-name { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
+  .team-title { font-size: 13px; color: var(--navy-mid); font-weight: 500; margin-bottom: 8px; }
+  .team-creds { font-size: 13px; color: var(--text-mid); line-height: 1.55; font-weight: 300; }
+  .team-langs {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 12px; color: var(--text-light); margin-top: 8px;
+  }
+
+  /* ── NEW PATIENTS ── */
+  .new-patients { background: var(--cream); }
+  .np-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+  .np-left h2 { text-align: left; }
+  .np-left p { font-size: 15px; color: var(--text-mid); line-height: 1.7; margin-bottom: 20px; font-weight: 300; }
+
+  .np-steps { display: flex; flex-direction: column; gap: 14px; margin-bottom: 24px; }
+  .np-step {
+    display: flex; gap: 14px; align-items: flex-start;
+    background: var(--white); border: 1.5px solid var(--border);
+    border-radius: 14px; padding: 16px 18px;
+  }
+  .step-num {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--navy); color: #fff;
+    font-size: 13px; font-weight: 600;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; margin-top: 1px;
+  }
+  .np-step h4 { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 3px; }
+  .np-step p { font-size: 13px; color: var(--text-mid); line-height: 1.5; font-weight: 300; }
+
+  .np-right-heading {
+    font-size: 13px; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--text-light); margin-bottom: 14px;
+  }
+
+  .download-card {
+    background: var(--white);
+    border: 1.5px solid var(--border);
+    border-radius: 14px;
+    padding: 16px 20px;
+    display: flex; gap: 14px; align-items: center;
+    margin-bottom: 12px;
+    text-decoration: none;
+    transition: border-color 0.2s;
+  }
+  .download-card:hover { border-color: var(--navy); }
+  .dl-icon { font-size: 24px; flex-shrink: 0; }
+  .dl-title { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
+  .dl-sub { font-size: 12px; color: var(--text-light); }
+
+  .acquainted-box {
+    background: var(--navy);
+    border-radius: 16px;
+    padding: 22px;
+    margin-top: 20px;
+  }
+  .acquainted-box h4 { font-size: 15px; font-weight: 600; color: #fff; margin-bottom: 8px; }
+  .acquainted-box p { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.6; margin-bottom: 14px; font-weight: 300; }
+  .acquainted-box a {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 9px 18px;
+    border-radius: 100px;
+    border: 1.5px solid rgba(255,255,255,0.4);
+    transition: background 0.2s;
+  }
+  .acquainted-box a:hover { background: rgba(255,255,255,0.25); }
+
+  /* ── BOOKING CTA ── */
+  .booking-cta {
+    background: var(--navy);
+    padding: 72px 32px;
+    text-align: center;
+  }
+  .booking-cta h2 { color: #fff; font-size: 42px; margin-bottom: 10px; }
+  .booking-cta p { color: rgba(255,255,255,0.65); font-size: 17px; margin-bottom: 36px; font-weight: 300; }
+  .cta-buttons { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+  .btn-white {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: #fff; color: var(--navy);
+    text-decoration: none; font-weight: 700; font-size: 15px;
+    padding: 13px 28px; border-radius: 100px;
+    transition: opacity 0.2s, transform 0.15s;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  }
+  .btn-white:hover { opacity: 0.92; transform: translateY(-1px); }
+  .btn-outline-w {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: transparent; color: rgba(255,255,255,0.85);
+    text-decoration: none; font-weight: 500; font-size: 15px;
+    padding: 12px 26px; border-radius: 100px;
+    border: 1.5px solid rgba(255,255,255,0.4);
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-outline-w:hover { border-color: rgba(255,255,255,0.8); color: #fff; }
+
+  /* ── CONTACT ── */
+  .contact { background: var(--cream); }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: start;
+  }
+  .contact-info h2 { text-align: left; }
+
+  .cd { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 22px; }
+  .cd-icon {
+    width: 40px; height: 40px;
+    background: var(--green-light);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; flex-shrink: 0;
+  }
+  .cd-label { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-light); margin-bottom: 3px; }
+  .cd-val { font-size: 15px; font-weight: 500; color: var(--text); }
+  .cd-val a { color: inherit; text-decoration: none; }
+  .cd-val a:hover { color: var(--navy); text-decoration: underline; }
+
+  .hours-tbl { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .hours-tbl tr td { padding: 7px 0; border-bottom: 1px solid var(--border); }
+  .hours-tbl tr:last-child td { border-bottom: none; }
+  .hours-tbl td:first-child { color: var(--text-mid); font-weight: 300; }
+  .hours-tbl td:last-child { text-align: right; font-weight: 500; color: var(--text); }
+
+  .map-box {
+    background: var(--green-light);
+    border-radius: 16px;
+    height: 260px;
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column; gap: 10px;
+    border: 1.5px solid var(--border);
+    font-size: 32px; margin-bottom: 14px;
+  }
+  .map-box p { font-size: 14px; color: var(--text-mid); font-weight: 500; }
+
+  .btn-navy {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--navy); color: #fff;
+    text-decoration: none; font-weight: 600; font-size: 15px;
+    padding: 13px 24px; border-radius: 100px; width: 100%; justify-content: center;
+    transition: background 0.2s;
+    box-shadow: 0 4px 20px rgba(61,84,66,0.3);
+  }
+  .btn-navy:hover { background: var(--green); }
+
+  /* ── FOOTER ── */
+  footer { background: var(--text); padding: 48px 32px 32px; }
+  .footer-inner { max-width: 1120px; margin: 0 auto; }
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 36px;
+    padding-bottom: 36px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .footer-brand .f-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px; font-weight: 400; color: #fff; margin-bottom: 6px;
+  }
+  .footer-brand p { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.65; font-weight: 300; }
+  .footer-col h4 { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 16px; }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 10px; }
+  .footer-col ul a { text-decoration: none; font-size: 14px; color: rgba(255,255,255,0.6); transition: color 0.2s; }
+  .footer-col ul a:hover { color: #fff; }
+  .footer-bottom { display: flex; justify-content: space-between; align-items: center; }
+  .footer-bottom p { font-size: 12px; color: rgba(255,255,255,0.25); }
+  .demo-badge {
+    font-size: 11px; color: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 4px 10px; border-radius: 100px;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 920px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-card { display: none; }
+    h1 { font-size: 42px; }
+    .facts-inner { grid-template-columns: repeat(2, 1fr); }
+    .services-grid { grid-template-columns: 1fr 1fr; }
+    .about-grid, .np-grid, .contact-grid { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 600px) {
+    .nav-links { display: none; }
+    h1 { font-size: 34px; }
+    h2 { font-size: 30px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .hero-inner, section { padding-left: 20px; padding-right: 20px; }
+    .footer-top { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- AWARD BANNER -->
+<div class="award-banner">
+  <p>🏆 <strong>2025 Community Clinician of the Year</strong> <span>— Middlesex Central District Medical Society</span></p>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-brand">
+      <span class="brand-name">Nana G. McMahon, MD</span>
+      <span class="brand-sub">Pediatrics · Concord, MA · Est. 1987</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">Our Team</a></li>
+      <li><a href="#new-patients">New Patients</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#book" class="nav-cta">Book Appointment</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow">
+        <span class="pulse"></span>
+        Now accepting new patients
+      </div>
+      <h1>Pediatric care <em>rooted in</em> Concord since 1987</h1>
+      <p class="hero-desc">Dr. Nana G. McMahon provides compassionate, evidence-based care for infants, children, adolescents, and college-age patients — in partnership with every family she serves.</p>
+      <div class="hero-actions">
+        <a href="#book" class="btn-gold">📅 Book an Appointment</a>
+        <a href="tel:9783695050" class="btn-ghost">📞 (978) 369-5050</a>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-item">
+          <span class="trust-num">37+</span>
+          <span class="trust-label">Years in Concord</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-num">FAAP</span>
+          <span class="trust-label">Fellow, American Academy of Pediatrics</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-num">NCQA</span>
+          <span class="trust-label">Recognized Patient-Centered Care</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- HERO CARD -->
+    <div class="hero-card" id="book">
+      <div class="hero-card-header">
+        <h3>Schedule a Visit</h3>
+        <p>Well visits, sick care, telehealth & more</p>
+      </div>
+      <div class="hero-card-body">
+        <div class="info-row">
+          <span class="icon">📍</span>
+          <span>131 Old Road to 9 Acre Corner, Suite 470, Concord, MA 01742</span>
+        </div>
+        <div class="info-row">
+          <span class="icon">🕐</span>
+          <span>Mon–Fri 8:30am–5:30pm · Weekends for urgent care</span>
+        </div>
+        <div class="info-row">
+          <span class="icon">⚡</span>
+          <span>Same-day sick appointments available</span>
+        </div>
+        <div class="card-divider"></div>
+        <button class="card-book-btn">Request an Appointment Online</button>
+        <div class="social-logins">
+          <button class="social-btn">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+            Google
+          </button>
+          <button class="social-btn">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            Apple
+          </button>
+        </div>
+        <div class="card-portal-label">Quick sign-in for portal access & appointment history</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUICK FACTS -->
+<div class="facts-band">
+  <div class="facts-inner">
+    <div class="fact-item">
+      <span class="fact-icon">🏥</span>
+      <div class="fact-text">
+        <span class="fact-val">Emerson Hospital</span>
+        <span class="fact-lab">Hospital affiliation, Concord MA</span>
+      </div>
+    </div>
+    <div class="fact-item">
+      <span class="fact-icon">📅</span>
+      <div class="fact-text">
+        <span class="fact-val">Same-Day Sick Visits</span>
+        <span class="fact-lab">Reserved daily for urgent needs</span>
+      </div>
+    </div>
+    <div class="fact-item">
+      <span class="fact-icon">📞</span>
+      <div class="fact-text">
+        <span class="fact-val">24/7 On-Call Team</span>
+        <span class="fact-lab">After hours: (978) 369-5050</span>
+      </div>
+    </div>
+    <div class="fact-item">
+      <span class="fact-icon">🌍</span>
+      <div class="fact-text">
+        <span class="fact-val">English · French · Arabic</span>
+        <span class="fact-lab">Languages spoken by Dr. McMahon</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="section-inner">
+    <div class="section-header centered">
+      <span class="section-tag">What We Offer</span>
+      <h2>Care from newborn through college age</h2>
+      <p class="section-sub">Personalized pediatric expertise in a respectful, collaborative environment — every stage of your child's development.</p>
+    </div>
+    <div class="services-grid">
+      <a href="#book" class="svc-card">
+        <div class="svc-icon">👶</div>
+        <h3>Well-Child Visits</h3>
+        <p>Routine checkups at every milestone tracking growth, development, and all the markers that matter most to your family.</p>
+        <span class="svc-link">Book a visit →</span>
+      </a>
+      <a href="#book" class="svc-card">
+        <div class="svc-icon">🤒</div>
+        <h3>Same-Day Sick Care</h3>
+        <p>Reserved same-day appointments for both urgent and routine sick visits. When your child needs care, we make it happen.</p>
+        <span class="svc-link">Book a sick visit →</span>
+      </a>
+      <a href="#book" class="svc-card">
+        <div class="svc-icon">💉</div>
+        <h3>Vaccinations</h3>
+        <p>All recommended childhood immunizations on-site, following AAP guidelines with thorough explanations at every step.</p>
+        <span class="svc-link">Schedule vaccines →</span>
+      </a>
+      <a href="#book" class="svc-card">
+        <div class="svc-icon">🏠</div>
+        <h3>Telehealth Visits</h3>
+        <p>Secure video visits for follow-ups, minor concerns, and questions — available when coming in isn't necessary.</p>
+        <span class="svc-link">Book telehealth →</span>
+      </a>
+      <a href="#book" class="svc-card">
+        <div class="svc-icon">🍂</div>
+        <h3>Flu Clinics</h3>
+        <p>Seasonal flu vaccination clinics for the whole family. Check our flu clinic schedule for upcoming dates and availability.</p>
+        <span class="svc-link">View flu clinic dates →</span>
+      </a>
+      <a href="#book" class="svc-card">
+        <div class="svc-icon">🎓</div>
+        <h3>College-Age Care</h3>
+        <p>We care for patients through college age, ensuring continuity as your child transitions into young adulthood.</p>
+        <span class="svc-link">Learn more →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT / TEAM -->
+<section class="about" id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-left">
+        <span class="section-tag">Our Practice</span>
+        <h2>A private practice built on 37 years of trust</h2>
+        <p>Nana Girgis McMahon, MD has maintained a private pediatric practice at Emerson Hospital in Concord, MA since 1987. Dr. McMahon and her staff are committed to giving the highest quality medical care to infants, children, adolescents, and college-age patients in a compassionate, family-friendly environment.</p>
+        <p>The practice provides organized, evidence-based care — coordinating with specialists when needed and reminding families proactively about needed tests and exams. Care is seamless, built around standard protocols, and always personalized.</p>
+        <div class="award-callout">
+          <p>🏆 <strong>2025 Community Clinician of the Year</strong> — Dr. McMahon has been awarded this honor by the Middlesex Central District Medical Society, recognizing her decades of exceptional service to the Concord community.</p>
+        </div>
+        <p>Dr. McMahon was also recognized by NCQA for systematic use of patient-centered, coordinated care management processes.</p>
+      </div>
+      <div class="team-cards">
+        <div class="team-card">
+          <div class="team-avatar">NM</div>
+          <div>
+            <div class="team-name">Dr. Nana G. McMahon, MD</div>
+            <div class="team-title">Founder & Lead Pediatrician</div>
+            <div class="team-creds">
+              Cairo University Medical School<br>
+              Residency: Baystate Medical Center<br>
+              Fellowship: Neonatal/Perinatal Medicine<br>
+              Board Certified: Pediatrics & Neonatal/Perinatal Medicine<br>
+              FAAP · Mass Medical Society
+            </div>
+            <div class="team-langs">🌍 English · French · Arabic</div>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar" style="background: var(--green);">NP</div>
+          <div>
+            <div class="team-name">Nancy P. Mizzoni, RN, MSN, CPNP</div>
+            <div class="team-title">Certified Pediatric Nurse Practitioner</div>
+            <div class="team-creds">
+              BS: Boston University · MS: Northeastern University<br>
+              With Dr. McMahon's practice since 1998<br>
+              Professor of Nursing, Middlesex Community College<br>
+              Emerson Hospital since 1981 · NRP Instructor
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEW PATIENTS -->
+<section class="new-patients" id="new-patients">
+  <div class="section-inner">
+    <div class="np-grid">
+      <div class="np-left">
+        <span class="section-tag">New Patients</span>
+        <h2>Joining our practice</h2>
+        <p>We look forward to welcoming your family. Here's what to know before your first visit — we've made it as straightforward as possible.</p>
+
+        <div class="np-steps">
+          <div class="np-step">
+            <div class="step-num">1</div>
+            <div>
+              <h4>Notify your insurance</h4>
+              <p>Let your insurance provider know that Dr. McMahon has been selected as your child's primary care provider.</p>
+            </div>
+          </div>
+          <div class="np-step">
+            <div class="step-num">2</div>
+            <div>
+              <h4>Gather records</h4>
+              <p>Request copies of all medical records and complete immunization history from birth from prior physicians.</p>
+            </div>
+          </div>
+          <div class="np-step">
+            <div class="step-num">3</div>
+            <div>
+              <h4>Complete registration</h4>
+              <p>Patient registration, HIPAA documentation, and demographics must be on file before your first well visit.</p>
+            </div>
+          </div>
+          <div class="np-step">
+            <div class="step-num">4</div>
+            <div>
+              <h4>Bring to your first visit</h4>
+              <p>Insurance card, photo ID, completed registration forms, immunization records, and copayment.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="np-right-heading">Forms & Downloads</div>
+        <a href="#" class="download-card">
+          <span class="dl-icon">📄</span>
+          <div>
+            <div class="dl-title">Patient Registration Form</div>
+            <div class="dl-sub">Download, complete, and bring to your first visit</div>
+          </div>
+        </a>
+        <a href="#" class="download-card">
+          <span class="dl-icon">📋</span>
+          <div>
+            <div class="dl-title">Medical Records Request Form</div>
+            <div class="dl-sub">For transferring records from prior providers</div>
+          </div>
+        </a>
+        <a href="#" class="download-card">
+          <span class="dl-icon">🔒</span>
+          <div>
+            <div class="dl-title">Notice of Privacy Practices (HIPAA)</div>
+            <div class="dl-sub">Our privacy policy and your rights as a patient</div>
+          </div>
+        </a>
+
+        <div class="acquainted-box">
+          <h4>Get Acquainted Visit</h4>
+          <p>Expecting your first child, new to the area, or considering switching care? Schedule a complimentary get-acquainted visit with Dr. McMahon — no obligation, no charge.</p>
+          <a href="#book">Schedule a Free Visit →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING CTA -->
+<div class="booking-cta">
+  <div class="section-inner">
+    <h2>Ready to get started?</h2>
+    <p>Book online or call us. Same-day sick visits available Monday through Friday — weekends for urgent care.</p>
+    <div class="cta-buttons">
+      <a href="#book" class="btn-white">📅 Book Online Now</a>
+      <a href="tel:9783695050" class="btn-outline-w">📞 (978) 369-5050</a>
+      <a href="#" class="btn-outline-w">🔐 Patient Portal Login</a>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <span class="section-tag">Find Us</span>
+        <h2>We're in Concord, MA</h2>
+
+        <div class="cd">
+          <div class="cd-icon">📍</div>
+          <div>
+            <div class="cd-label">Address</div>
+            <div class="cd-val">131 Old Road to 9 Acre Corner, Suite 470<br>Concord, MA 01742</div>
+          </div>
+        </div>
+        <div class="cd">
+          <div class="cd-icon">📞</div>
+          <div>
+            <div class="cd-label">Phone</div>
+            <div class="cd-val"><a href="tel:9783695050">(978) 369-5050</a></div>
+          </div>
+        </div>
+        <div class="cd">
+          <div class="cd-icon">📠</div>
+          <div>
+            <div class="cd-label">Fax</div>
+            <div class="cd-val">(978) 371-7292</div>
+          </div>
+        </div>
+        <div class="cd">
+          <div class="cd-icon">🕐</div>
+          <div>
+            <div class="cd-label">Office Hours</div>
+            <table class="hours-tbl">
+              <tr><td>Monday – Friday</td><td>8:30 AM – 5:30 PM</td></tr>
+              <tr><td>Saturday – Sunday</td><td>Urgent care available</td></tr>
+              <tr><td>After Hours</td><td>Call (978) 369-5050</td></tr>
+            </table>
+          </div>
+        </div>
+        <div class="cd">
+          <div class="cd-icon">🏥</div>
+          <div>
+            <div class="cd-label">Hospital Affiliations</div>
+            <div class="cd-val" style="font-size:14px;font-weight:300;color:var(--text-mid);">Emerson Hospital, Concord MA<br>Newton Wellesley Hospital, Newton MA</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="map-box">
+          <span>🗺️</span>
+          <p>Concord, MA 01742</p>
+        </div>
+        <a href="https://maps.google.com/maps?q=131+Old+Road+to+9+Acre+Corner+470,+Concord,+MA+01742" class="btn-navy" target="_blank">Get Directions →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="f-name">Nana G. McMahon, MD</div>
+        <p>Private pediatric practice serving Concord and the surrounding MetroWest community since 1987. Board certified in Pediatrics and Neonatal/Perinatal Medicine. Fellow of the American Academy of Pediatrics.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">Our Team</a></li>
+          <li><a href="#new-patients">New Patients</a></li>
+          <li><a href="#contact">Contact & Hours</a></li>
+          <li><a href="#">Flu Clinics</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Patient Resources</h4>
+        <ul>
+          <li><a href="#">Patient Portal Login</a></li>
+          <li><a href="#">Registration Forms</a></li>
+          <li><a href="#">Privacy Practices</a></li>
+          <li><a href="#">Medical Records Request</a></li>
+          <li><a href="#">For Parents</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Nana Girgis McMahon, MD PC · 131 Old Road to 9 Acre Corner, Concord, MA 01742 · (978) 369-5050</p>
+      <span class="demo-badge">Demo site — not live</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

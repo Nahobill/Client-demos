@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Web Design Demos</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --sage: #5b7a62;
+    --sage-dark: #3d5442;
+    --sage-light: #e8f0ea;
+    --cream: #faf9f7;
+    --text: #1c2319;
+    --text-mid: #4a5548;
+    --text-light: #7a8a76;
+    --border: #dde6da;
+    --white: #fff;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  header {
+    background: var(--sage-dark);
+    padding: 48px 32px 40px;
+    text-align: center;
+  }
+
+  header .eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 10px;
+  }
+
+  header h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 36px;
+    color: #fff;
+    font-weight: 400;
+    margin-bottom: 10px;
+  }
+
+  header p {
+    font-size: 15px;
+    color: rgba(255,255,255,0.6);
+    font-weight: 300;
+  }
+
+  main {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 52px 32px 80px;
+  }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 20px;
+  }
+
+  .demo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+    margin-bottom: 48px;
+  }
+
+  .demo-card {
+    background: var(--white);
+    border: 1.5px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    display: block;
+  }
+
+  .demo-card:hover {
+    border-color: var(--sage);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(61,84,66,0.12);
+  }
+
+  .demo-thumb {
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    background: var(--sage-light);
+    position: relative;
+  }
+
+  .demo-thumb .status-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 100px;
+  }
+
+  .status-live { background: #e8f5e9; color: #2e7d32; }
+  .status-draft { background: #fff8e1; color: #f57f17; }
+  .status-pitched { background: #e8f0ea; color: var(--sage-dark); }
+
+  .demo-body { padding: 18px 20px; }
+
+  .demo-niche {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 4px;
+  }
+
+  .demo-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+
+  .demo-desc {
+    font-size: 13px;
+    color: var(--text-mid);
+    line-height: 1.5;
+    font-weight: 300;
+  }
+
+  .demo-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+    font-size: 12px;
+    color: var(--text-light);
+  }
+
+  .demo-arrow {
+    font-size: 16px;
+    color: var(--sage);
+  }
+
+  /* Placeholder card */
+  .demo-card.placeholder {
+    border-style: dashed;
+    background: transparent;
+    cursor: default;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  .demo-card.placeholder:hover {
+    transform: none;
+    box-shadow: none;
+    border-color: var(--border);
+  }
+
+  .placeholder .demo-thumb {
+    background: var(--cream);
+    color: var(--text-light);
+    font-size: 32px;
+  }
+
+  footer {
+    text-align: center;
+    padding: 32px;
+    font-size: 12px;
+    color: var(--text-light);
+    border-top: 1px solid var(--border);
+  }
+
+  @media (max-width: 600px) {
+    header { padding: 36px 20px 28px; }
+    header h1 { font-size: 28px; }
+    main { padding: 36px 20px 60px; }
+    .demo-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">Client Demo Portfolio</div>
+  <h1>Web Design Previews</h1>
+  <p>Each link below is a live demo built for a specific local business prospect.</p>
+</header>
+
+<main>
+  <div class="section-label">Active Demos</div>
+  <div class="demo-grid">
+
+    <a href="./mcmahon-demo/" class="demo-card">
+      <div class="demo-thumb">
+        🏥
+        <span class="status-badge status-pitched">Pitched</span>
+      </div>
+      <div class="demo-body">
+        <div class="demo-niche">Pediatrics · Healthcare</div>
+        <div class="demo-name">Dr. Nana G. McMahon, MD</div>
+        <div class="demo-desc">Concord, MA · Complete redesign demo replacing outdated Slam Dunk Sites build.</div>
+        <div class="demo-meta">
+          <span>nahobill.github.io/client-demos/mcmahon-demo</span>
+          <span class="demo-arrow">→</span>
+        </div>
+      </div>
+    </a>
+
+    <div class="demo-card placeholder">
+      <div class="demo-thumb">➕</div>
+      <div class="demo-body">
+        <div class="demo-niche">Next Client</div>
+        <div class="demo-name">Coming Soon</div>
+        <div class="demo-desc">Your next prospect demo will appear here once built.</div>
+        <div class="demo-meta"><span>—</span></div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  Private demo portfolio · Not for public distribution
+</footer>
+
+</body>
+</html>

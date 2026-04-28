@@ -131,7 +131,7 @@
   .hero-inner {
     max-width: 1120px;
     margin: 0 auto;
-    padding: 80px 32px 88px;
+    padding: 0px 32px 24px;
     display: grid;
     grid-template-columns: 1fr 380px;
     gap: 64px;
@@ -312,7 +312,65 @@
     margin-top: 10px;
   }
 
-  /* ── AUTH STATES ── */
+  /* ── APPOINTMENT TYPE SELECTOR ── */
+  .appt-selector { margin-bottom: 12px; }
+
+  .appt-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 8px;
+  }
+
+  .appt-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .appt-opt {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 14px;
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    background: var(--white);
+    cursor: pointer;
+    text-align: left;
+    font-family: 'DM Sans', sans-serif;
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .appt-opt:hover { border-color: var(--navy-mid); }
+
+  .appt-opt.active {
+    border-color: var(--navy);
+    background: var(--green-light);
+  }
+
+  .appt-opt-icon { font-size: 18px; flex-shrink: 0; }
+
+  .appt-opt-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+
+  .appt-opt-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    display: block;
+  }
+
+  .appt-opt-dur {
+    font-size: 11px;
+    color: var(--text-light);
+    display: block;
+  }
   .signed-in-row {
     display: flex;
     align-items: center;
@@ -688,8 +746,15 @@
   }
   .map-box p { font-size: 14px; color: var(--text-mid); font-weight: 500; }
 
-  .btn-navy {
+  .btn-outline-nav {
     display: inline-flex; align-items: center; gap: 8px;
+    background: transparent; color: var(--navy);
+    text-decoration: none; font-weight: 600; font-size: 15px;
+    padding: 12px 28px; border-radius: 100px;
+    border: 1.5px solid var(--border);
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .btn-outline-nav:hover { border-color: var(--navy); background: var(--green-light); }
     background: var(--navy); color: #fff;
     text-decoration: none; font-weight: 600; font-size: 15px;
     padding: 13px 24px; border-radius: 100px; width: 100%; justify-content: center;
@@ -766,7 +831,7 @@
       <li><a href="#about">Our Team</a></li>
       <li><a href="#new-patients">New Patients</a></li>
       <li><a href="#contact">Contact</a></li>
-      <li><a href="#book" class="nav-cta">Book Appointment</a></li>
+      <li><a href="#booking" class="nav-cta">Book Appointment</a></li>
     </ul>
   </div>
 </nav>
@@ -782,7 +847,7 @@
       <h1>Pediatric care <em>rooted in</em> Concord since 1987</h1>
       <p class="hero-desc">Dr. Nana G. McMahon provides compassionate, evidence-based care for infants, children, adolescents, and college-age patients — in partnership with every family she serves.</p>
       <div class="hero-actions">
-        <a href="#book" class="btn-gold">📅 Book an Appointment</a>
+        <a href="#booking" class="btn-gold">📅 Book an Appointment</a>
         <a href="tel:9783695050" class="btn-ghost">📞 (978) 369-5050</a>
       </div>
       <div class="hero-trust">
@@ -821,7 +886,30 @@
           <span>Same-day sick appointments available</span>
         </div>
         <div class="card-divider"></div>
-        <button class="card-book-btn" id="appt-btn">Request an Appointment Online</button>
+        <!-- Appointment type selector -->
+        <div class="appt-selector">
+          <div class="appt-label">What type of visit?</div>
+          <div class="appt-options">
+            <button class="appt-opt active" data-type="wellness">
+              <span class="appt-opt-icon">👶</span>
+              <span class="appt-opt-text">
+                <span class="appt-opt-name">Wellness Check</span>
+                <span class="appt-opt-dur">40 min</span>
+              </span>
+            </button>
+            <button class="appt-opt" data-type="sick">
+              <span class="appt-opt-icon">🤒</span>
+              <span class="appt-opt-text">
+                <span class="appt-opt-name">Sick Visit</span>
+                <span class="appt-opt-dur">30 min</span>
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <button class="card-book-btn" id="appt-btn">
+          Request an Appointment Online
+        </button>
 
         <!-- SIGNED OUT STATE -->
         <div id="auth-signed-out">
@@ -905,37 +993,37 @@
       <p class="section-sub">Personalized pediatric expertise in a respectful, collaborative environment — every stage of your child's development.</p>
     </div>
     <div class="services-grid">
-      <a href="#book" class="svc-card">
+      <a href="#booking" class="svc-card">
         <div class="svc-icon">👶</div>
         <h3>Well-Child Visits</h3>
         <p>Routine checkups at every milestone tracking growth, development, and all the markers that matter most to your family.</p>
         <span class="svc-link">Book a visit →</span>
       </a>
-      <a href="#book" class="svc-card">
+      <a href="#booking" class="svc-card">
         <div class="svc-icon">🤒</div>
         <h3>Same-Day Sick Care</h3>
         <p>Reserved same-day appointments for both urgent and routine sick visits. When your child needs care, we make it happen.</p>
         <span class="svc-link">Book a sick visit →</span>
       </a>
-      <a href="#book" class="svc-card">
+      <a href="#booking" class="svc-card">
         <div class="svc-icon">💉</div>
         <h3>Vaccinations</h3>
         <p>All recommended childhood immunizations on-site, following AAP guidelines with thorough explanations at every step.</p>
         <span class="svc-link">Schedule vaccines →</span>
       </a>
-      <a href="#book" class="svc-card">
+      <a href="#booking" class="svc-card">
         <div class="svc-icon">🏠</div>
         <h3>Telehealth Visits</h3>
         <p>Secure video visits for follow-ups, minor concerns, and questions — available when coming in isn't necessary.</p>
         <span class="svc-link">Book telehealth →</span>
       </a>
-      <a href="#book" class="svc-card">
+      <a href="#booking" class="svc-card">
         <div class="svc-icon">🍂</div>
         <h3>Flu Clinics</h3>
         <p>Seasonal flu vaccination clinics for the whole family. Check our flu clinic schedule for upcoming dates and availability.</p>
         <span class="svc-link">View flu clinic dates →</span>
       </a>
-      <a href="#book" class="svc-card">
+      <a href="#booking" class="svc-card">
         <div class="svc-icon">🎓</div>
         <h3>College-Age Care</h3>
         <p>We care for patients through college age, ensuring continuity as your child transitions into young adulthood.</p>
@@ -1020,8 +1108,8 @@
           <div class="np-step">
             <div class="step-num">3</div>
             <div>
-              <h4>Complete registration</h4>
-              <p>Patient registration, HIPAA documentation, and demographics must be on file before your first well visit.</p>
+              <h4>Complete registration online</h4>
+              <p>Fill out the new patient registration form on this page — no printing needed. We'll have everything on file before your first visit.</p>
             </div>
           </div>
           <div class="np-step">
@@ -1035,51 +1123,66 @@
       </div>
 
       <div>
-        <div class="np-right-heading">Forms & Downloads</div>
-        <a href="#" class="download-card">
-          <span class="dl-icon">📄</span>
-          <div>
-            <div class="dl-title">Patient Registration Form</div>
-            <div class="dl-sub">Download, complete, and bring to your first visit</div>
-          </div>
-        </a>
-        <a href="#" class="download-card">
-          <span class="dl-icon">📋</span>
-          <div>
-            <div class="dl-title">Medical Records Request Form</div>
-            <div class="dl-sub">For transferring records from prior providers</div>
-          </div>
-        </a>
-        <a href="#" class="download-card">
-          <span class="dl-icon">🔒</span>
-          <div>
-            <div class="dl-title">Notice of Privacy Practices (HIPAA)</div>
-            <div class="dl-sub">Our privacy policy and your rights as a patient</div>
-          </div>
-        </a>
+        <div class="np-right-heading">New Patient Registration</div>
+        <p style="font-size: 13px; color: var(--text-mid); font-weight: 300; margin-bottom: 16px; line-height: 1.55;">Complete this form online — no printing required. We'll have your information on file before your first visit.</p>
 
-        <div class="acquainted-box">
+        <div style="background: var(--white); border: 1.5px solid var(--border); border-radius: 14px; overflow: hidden; padding: 8px 16px;">
+          <iframe data-tally-src="https://tally.so/embed/BzL5PK?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="1523" frameborder="0" marginheight="0" marginwidth="0" title="New Patient Registration"></iframe>
+          <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+        </div>
+
+        <div class="acquainted-box" style="margin-top: 16px;">
           <h4>Get Acquainted Visit</h4>
           <p>Expecting your first child, new to the area, or considering switching care? Schedule a complimentary get-acquainted visit with Dr. McMahon — no obligation, no charge.</p>
-          <a href="#book">Schedule a Free Visit →</a>
+          <a href="#booking">Schedule a Free Visit →</a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- BOOKING CTA -->
-<div class="booking-cta">
+<!-- BOOKING SECTION -->
+<section id="booking" style="background: var(--cream); padding: 80px 32px;">
   <div class="section-inner">
-    <h2>Ready to get started?</h2>
-    <p>Book online or call us. Same-day sick visits available Monday through Friday — weekends for urgent care.</p>
-    <div class="cta-buttons">
-      <a href="#book" class="btn-white">📅 Book Online Now</a>
-      <a href="tel:9783695050" class="btn-outline-w">📞 (978) 369-5050</a>
-      <a href="#" class="btn-outline-w">🔐 Patient Portal Login</a>
+    <div style="text-align: center; margin-bottom: 40px;">
+      <span class="section-tag">Book Online</span>
+      <h2 style="font-family: 'DM Serif Display', serif; font-size: 38px; color: var(--text); margin-bottom: 12px;">Schedule a visit</h2>
+      <p style="font-size: 17px; color: var(--text-mid); font-weight: 300; max-width: 480px; margin: 0 auto;">Pick a time that works for your family. Confirmation sent instantly — no phone call needed.</p>
+    </div>
+
+    <div style="max-width: 480px; margin: 0 auto; background: var(--white); border: 1.5px solid var(--border); border-radius: 16px; padding: 28px;">
+
+      <div class="appt-label" style="margin-bottom: 8px;">What type of visit?</div>
+      <div class="appt-options" style="margin-bottom: 20px;">
+        <button class="appt-opt active" data-type="wellness" id="booking-wellness">
+          <span class="appt-opt-icon">👶</span>
+          <span class="appt-opt-text">
+            <span class="appt-opt-name">Wellness Check</span>
+            <span class="appt-opt-dur">40 min</span>
+          </span>
+        </button>
+        <button class="appt-opt" data-type="sick" id="booking-sick">
+          <span class="appt-opt-icon">🤒</span>
+          <span class="appt-opt-text">
+            <span class="appt-opt-name">Sick Visit</span>
+            <span class="appt-opt-dur">30 min</span>
+          </span>
+        </button>
+      </div>
+
+      <button class="card-book-btn" id="booking-btn">Request an Appointment Online</button>
+
+      <div style="text-align: center; margin-top: 16px; font-size: 12px; color: var(--text-light);">
+        Confirmation email sent instantly · No account required
+      </div>
+    </div>
+
+    <div style="display: flex; justify-content: center; gap: 16px; margin-top: 24px; flex-wrap: wrap;">
+      <a href="tel:9783695050" class="btn-navy" style="width: auto; padding: 12px 28px;">📞 Prefer to call? (978) 369-5050</a>
+      <a href="#" class="btn-outline-nav">🔐 Patient Portal Login</a>
     </div>
   </div>
-</div>
+</section>
 
 <!-- CONTACT -->
 <section class="contact" id="contact">
@@ -1175,6 +1278,54 @@
     </div>
   </div>
 </footer>
+
+<!-- Cal element-click embed: all appointment types -->
+<script type="text/javascript">
+  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+
+  // Wellness check (40 min) — namespace: 15min
+  Cal("init", "15min", {origin:"https://app.cal.com"});
+  Cal.ns["15min"]("ui", {"hideEventTypeDetails":false,"layout":"week_view","cssVarsPerTheme":{"light":{"cal-brand":"#3d5442"}}});
+
+  // Sick visit (30 min) — namespace: 30min
+  Cal("init", "30min", {origin:"https://app.cal.com"});
+  Cal.ns["30min"]("ui", {"hideEventTypeDetails":false,"layout":"week_view","cssVarsPerTheme":{"light":{"cal-brand":"#3d5442"}}});
+</script>
+
+<!-- Appointment type selector logic -->
+<script>
+  const calConfig = {
+    wellness: { link: "nick-hobill-1a7wtm/15min", namespace: "15min" },
+    sick:     { link: "nick-hobill-1a7wtm/30min", namespace: "30min" }
+  };
+
+  function openCal(type) {
+    const cfg = calConfig[type];
+    if (window.Cal && Cal.ns && Cal.ns[cfg.namespace]) {
+      Cal.ns[cfg.namespace]("modal", { calLink: cfg.link });
+    } else {
+      window.open("https://cal.com/" + cfg.link, "_blank");
+    }
+  }
+
+  function setupSelector(containerSelector, btnId) {
+    let selected = "wellness";
+    document.querySelectorAll(containerSelector + " .appt-opt").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(containerSelector + " .appt-opt").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        selected = btn.dataset.type;
+      });
+    });
+    document.getElementById(btnId).addEventListener("click", () => openCal(selected));
+  }
+
+  // Hero card selector
+  setupSelector(".hero-card-body", "appt-btn");
+
+  // Booking section selector
+  setupSelector("#booking", "booking-btn");
+</script>
 
 <!-- ══════════════════════════════════════════════
      FIREBASE AUTH

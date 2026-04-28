@@ -13,8 +13,6 @@
   :root {
     --navy: #3d5442;
     --navy-mid: #5b7a62;
-    --gold: #5b7a62;
-    --gold-light: #e8f0ea;
     --cream: #faf9f7;
     --white: #ffffff;
     --text: #1c2319;
@@ -23,7 +21,6 @@
     --border: #dde6da;
     --green: #3d5442;
     --green-light: #e8f0ea;
-    --accent: #c67c4e;
   }
 
   html { scroll-behavior: smooth; }
@@ -131,7 +128,7 @@
   .hero-inner {
     max-width: 1120px;
     margin: 0 auto;
-    padding: 0px 32px 24px;
+    padding: 20px 32px 32px;
     display: grid;
     grid-template-columns: 1fr 380px;
     gap: 64px;
@@ -155,7 +152,7 @@
 
   .hero-eyebrow .pulse {
     width: 6px; height: 6px;
-    background: var(--gold);
+    background: var(--navy);
     border-radius: 50%;
     animation: pulse 2s infinite;
   }
@@ -233,9 +230,9 @@
   /* Hero booking card */
   .hero-card {
     background: var(--white);
-    border-radius: 8px;
+    border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 24px 64px rgba(0,0,0,0.35);
+    box-shadow: 0 24px 64px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.06);
   }
 
   .hero-card-header {
@@ -492,7 +489,7 @@
   .fact-text .fact-lab { font-size: 13px; color: var(--text-light); }
 
   /* ── SECTIONS ── */
-  section { padding: 88px 32px; }
+  section { padding: 72px 32px; }
   .section-inner { max-width: 1120px; margin: 0 auto; }
   .section-tag {
     font-size: 11px;
@@ -641,21 +638,6 @@
     text-transform: uppercase; color: var(--text-light); margin-bottom: 14px;
   }
 
-  .download-card {
-    background: var(--white);
-    border: 1.5px solid var(--border);
-    border-radius: 14px;
-    padding: 16px 20px;
-    display: flex; gap: 14px; align-items: center;
-    margin-bottom: 12px;
-    text-decoration: none;
-    transition: border-color 0.2s;
-  }
-  .download-card:hover { border-color: var(--navy); }
-  .dl-icon { font-size: 24px; flex-shrink: 0; }
-  .dl-title { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
-  .dl-sub { font-size: 12px; color: var(--text-light); }
-
   .acquainted-box {
     background: var(--navy);
     border-radius: 16px;
@@ -677,34 +659,6 @@
     transition: background 0.2s;
   }
   .acquainted-box a:hover { background: rgba(255,255,255,0.25); }
-
-  /* ── BOOKING CTA ── */
-  .booking-cta {
-    background: var(--navy);
-    padding: 72px 32px;
-    text-align: center;
-  }
-  .booking-cta h2 { color: #fff; font-size: 42px; margin-bottom: 10px; }
-  .booking-cta p { color: rgba(255,255,255,0.65); font-size: 17px; margin-bottom: 36px; font-weight: 300; }
-  .cta-buttons { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
-  .btn-white {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: #fff; color: var(--navy);
-    text-decoration: none; font-weight: 700; font-size: 15px;
-    padding: 13px 28px; border-radius: 100px;
-    transition: opacity 0.2s, transform 0.15s;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-  }
-  .btn-white:hover { opacity: 0.92; transform: translateY(-1px); }
-  .btn-outline-w {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: transparent; color: rgba(255,255,255,0.85);
-    text-decoration: none; font-weight: 500; font-size: 15px;
-    padding: 12px 26px; border-radius: 100px;
-    border: 1.5px solid rgba(255,255,255,0.4);
-    transition: border-color 0.2s, color 0.2s;
-  }
-  .btn-outline-w:hover { border-color: rgba(255,255,255,0.8); color: #fff; }
 
   /* ── CONTACT ── */
   .contact { background: var(--cream); }
@@ -755,6 +709,8 @@
     transition: border-color 0.2s, background 0.2s;
   }
   .btn-outline-nav:hover { border-color: var(--navy); background: var(--green-light); }
+  .btn-navy {
+    display: inline-flex; align-items: center; gap: 8px;
     background: var(--navy); color: #fff;
     text-decoration: none; font-weight: 600; font-size: 15px;
     padding: 13px 24px; border-radius: 100px; width: 100%; justify-content: center;
@@ -794,13 +750,15 @@
 
   /* ── RESPONSIVE ── */
   @media (max-width: 920px) {
-    .hero-inner { grid-template-columns: 1fr; }
+    .hero-inner { grid-template-columns: 1fr; padding-bottom: 0; }
     .hero-card { display: none; }
     h1 { font-size: 42px; }
     .facts-inner { grid-template-columns: repeat(2, 1fr); }
     .services-grid { grid-template-columns: 1fr 1fr; }
     .about-grid, .np-grid, .contact-grid { grid-template-columns: 1fr; }
     .footer-top { grid-template-columns: 1fr 1fr; }
+    /* Show booking section prominently on mobile since hero card is hidden */
+    #booking { padding-top: 48px; }
   }
   @media (max-width: 600px) {
     .nav-links { display: none; }

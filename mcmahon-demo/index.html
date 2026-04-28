@@ -312,6 +312,107 @@
     margin-top: 10px;
   }
 
+  /* ── AUTH STATES ── */
+  .signed-in-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--cream);
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    padding: 10px 12px;
+    margin-top: 12px;
+  }
+
+  .user-avatar {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  .user-initials {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: var(--navy);
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .user-info { flex: 1; min-width: 0; }
+
+  .user-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .user-email {
+    font-size: 11px;
+    color: var(--text-light);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .sign-out-btn {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-light);
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 3px 8px;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    flex-shrink: 0;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .sign-out-btn:hover { color: var(--text); border-color: var(--text-light); }
+
+  .portal-link-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .portal-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--navy);
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 9px 16px;
+    border-radius: 100px;
+    transition: background 0.2s;
+    white-space: nowrap;
+  }
+  .portal-btn:hover { background: var(--green); }
+
+  .portal-hint {
+    font-size: 11px;
+    color: var(--text-light);
+    line-height: 1.4;
+  }
+
+  /* Loading spinner on auth buttons */
+  .social-btn.loading {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
   /* ── QUICK FACTS ── */
   .facts-band { background: var(--white); border-bottom: 1px solid var(--border); }
   .facts-inner {
@@ -720,18 +821,42 @@
           <span>Same-day sick appointments available</span>
         </div>
         <div class="card-divider"></div>
-        <button class="card-book-btn">Request an Appointment Online</button>
-        <div class="social-logins">
-          <button class="social-btn">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-            Google
-          </button>
-          <button class="social-btn">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-            Apple
-          </button>
+        <button class="card-book-btn" id="appt-btn">Request an Appointment Online</button>
+
+        <!-- SIGNED OUT STATE -->
+        <div id="auth-signed-out">
+          <div class="social-logins">
+            <button class="social-btn" id="btn-google" onclick="signInGoogle()">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="15" height="15"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+              Sign in with Google
+            </button>
+            <button class="social-btn" id="btn-apple" onclick="signInApple()">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="15" height="15"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+              Sign in with Apple
+            </button>
+          </div>
+          <div class="card-portal-label">Sign in for portal access & appointment history</div>
         </div>
-        <div class="card-portal-label">Quick sign-in for portal access & appointment history</div>
+
+        <!-- SIGNED IN STATE (hidden until auth) -->
+        <div id="auth-signed-in" style="display:none;">
+          <div class="signed-in-row">
+            <img id="user-photo" src="" alt="" class="user-avatar" onerror="this.style.display='none';document.getElementById('user-initials').style.display='flex'">
+            <div id="user-initials" class="user-initials" style="display:none;"></div>
+            <div class="user-info">
+              <div id="user-name" class="user-name"></div>
+              <div id="user-email" class="user-email"></div>
+            </div>
+            <button class="sign-out-btn" onclick="signOut()">Sign out</button>
+          </div>
+          <div class="portal-link-row">
+            <a href="#" class="portal-btn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+              Open Patient Portal
+            </a>
+            <span class="portal-hint">Records, messages & results</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -1050,6 +1175,165 @@
     </div>
   </div>
 </footer>
+
+<!-- ══════════════════════════════════════════════
+     FIREBASE AUTH
+     
+     SETUP INSTRUCTIONS (5 minutes, free):
+     1. Go to https://console.firebase.google.com
+     2. Click "Add project" → name it "mcmahon-demo" → Create
+     3. Click the </> (Web) icon to add a web app
+     4. Copy your firebaseConfig object and paste it below
+     5. In Firebase console → Authentication → Get started
+     6. Enable "Google" provider (one click)
+     7. Enable "Apple" provider (needs Apple Dev account for live)
+     8. Add your GitHub Pages domain to "Authorized domains"
+        e.g. nahobill.github.io
+     
+     That's it — sign-in will work on the live site.
+══════════════════════════════════════════════ -->
+
+<script type="module">
+  import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
+  import {
+    getAuth,
+    GoogleAuthProvider,
+    OAuthProvider,
+    signInWithPopup,
+    signOut as fbSignOut,
+    onAuthStateChanged
+  } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js';
+
+  // ── PASTE YOUR FIREBASE CONFIG HERE ──────────────────
+  const firebaseConfig = {
+    apiKey:            "AIzaSyBTINyW-k6EPiXR7srbCDXjh7-vGnxIY1s",
+    authDomain:        "mcmahon-demo.firebaseapp.com",
+    projectId:         "mcmahon-demo",
+    storageBucket:     "mcmahon-demo.firebasestorage.app",
+    messagingSenderId: "54791119262",
+    appId:             "1:54791119262:web:d702341cbb0a469896f68f",
+    measurementId:     "G-05FJ5E7K2H"
+  };
+  // ─────────────────────────────────────────────────────
+
+  const configured = firebaseConfig.apiKey !== "PASTE_YOUR_API_KEY";
+
+  if (!configured) {
+    // Demo mode: show toast explaining setup needed
+    window.signInGoogle = () => showSetupToast('Google');
+    window.signInApple  = () => showSetupToast('Apple');
+    window.signOut      = () => {};
+    showSetupBanner();
+  } else {
+    const app  = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    // ── Auth state listener ──
+    onAuthStateChanged(auth, user => {
+      if (user) {
+        showSignedIn(user);
+      } else {
+        showSignedOut();
+      }
+    });
+
+    // ── Google sign-in ──
+    window.signInGoogle = async () => {
+      const btn = document.getElementById('btn-google');
+      btn.classList.add('loading');
+      btn.textContent = 'Signing in…';
+      try {
+        const provider = new GoogleAuthProvider();
+        provider.addScope('profile');
+        provider.addScope('email');
+        await signInWithPopup(auth, provider);
+      } catch (e) {
+        btn.classList.remove('loading');
+        btn.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg> Sign in with Google';
+        if (e.code !== 'auth/popup-closed-by-user') console.error(e);
+      }
+    };
+
+    // ── Apple sign-in ──
+    window.signInApple = async () => {
+      const btn = document.getElementById('btn-apple');
+      btn.classList.add('loading');
+      btn.textContent = 'Signing in…';
+      try {
+        const provider = new OAuthProvider('apple.com');
+        provider.addScope('email');
+        provider.addScope('name');
+        await signInWithPopup(auth, provider);
+      } catch (e) {
+        btn.classList.remove('loading');
+        btn.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg> Sign in with Apple';
+        if (e.code !== 'auth/popup-closed-by-user') console.error(e);
+      }
+    };
+
+    // ── Sign out ──
+    window.signOut = () => fbSignOut(auth);
+  }
+
+  // ── UI helpers ──
+  function showSignedIn(user) {
+    document.getElementById('auth-signed-out').style.display = 'none';
+    document.getElementById('auth-signed-in').style.display  = 'block';
+
+    const name  = user.displayName || 'Patient';
+    const email = user.email || '';
+    const photo = user.photoURL;
+
+    document.getElementById('user-name').textContent  = name;
+    document.getElementById('user-email').textContent = email;
+
+    const avatarImg = document.getElementById('user-photo');
+    const initials  = document.getElementById('user-initials');
+
+    if (photo) {
+      avatarImg.src = photo;
+      avatarImg.style.display = 'block';
+      initials.style.display  = 'none';
+    } else {
+      avatarImg.style.display = 'none';
+      initials.style.display  = 'flex';
+      initials.textContent = name.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
+    }
+  }
+
+  function showSignedOut() {
+    document.getElementById('auth-signed-out').style.display = 'block';
+    document.getElementById('auth-signed-in').style.display  = 'none';
+  }
+
+  function showSetupBanner() {
+    const card = document.querySelector('.hero-card-body');
+    const banner = document.createElement('div');
+    banner.style.cssText = `
+      background: #fff8e8; border: 1.5px solid #f0d080; border-radius: 10px;
+      padding: 10px 14px; margin-top: 10px; font-size: 11px;
+      color: #7a5c00; line-height: 1.5;
+    `;
+    banner.innerHTML = '🔧 <strong>Dev mode:</strong> Firebase not configured yet. Add your config to enable live sign-in. See comments in the HTML.';
+    card.appendChild(banner);
+  }
+
+  function showSetupToast(provider) {
+    const existing = document.getElementById('auth-toast');
+    if (existing) existing.remove();
+    const toast = document.createElement('div');
+    toast.id = 'auth-toast';
+    toast.style.cssText = `
+      position: fixed; bottom: 32px; left: 50%; transform: translateX(-50%);
+      background: #1c2319; color: white; padding: 12px 20px; border-radius: 100px;
+      font-size: 13px; font-family: 'DM Sans', sans-serif; z-index: 9999;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+    `;
+    toast.textContent = `${provider} sign-in ready — add Firebase config to activate`;
+    document.body.appendChild(toast);
+    setTimeout(() => toast.remove(), 3500);
+  }
+</script>
 
 </body>
 </html>

@@ -100,6 +100,15 @@
     letter-spacing: 0.04em;
   }
   .award-banner span { opacity: 0.85; font-weight: 400; }
+  .award-banner .review-link {
+    color: #fff;
+    opacity: 0.9;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    margin-left: 10px;
+    white-space: nowrap;
+  }
+  .award-banner .review-link:hover { opacity: 1; }
 
   /* ── HERO ── */
   .hero {
@@ -216,6 +225,7 @@
     margin-top: 36px;
     display: flex;
     gap: 28px;
+    flex-wrap: wrap;
   }
   .trust-item { text-align: left; }
   .trust-num {
@@ -683,11 +693,18 @@
   .cd-val a { color: inherit; text-decoration: none; }
   .cd-val a:hover { color: var(--navy); text-decoration: underline; }
 
-  .hours-tbl { width: 100%; border-collapse: collapse; font-size: 14px; }
-  .hours-tbl tr td { padding: 7px 0; border-bottom: 1px solid var(--border); }
-  .hours-tbl tr:last-child td { border-bottom: none; }
-  .hours-tbl td:first-child { color: var(--text-mid); font-weight: 300; }
-  .hours-tbl td:last-child { text-align: right; font-weight: 500; color: var(--text); }
+  .hours-tbl { width: 100%; }
+  .hours-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: baseline;
+    gap: 24px;
+    padding: 7px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .hours-row:last-child { border-bottom: none; }
+  .hours-row .hr-label { color: var(--text-mid); font-weight: 300; font-size: 14px; }
+  .hours-row .hr-val { text-align: right; font-weight: 500; color: var(--text); font-size: 14px; white-space: nowrap; }
 
   .map-box {
     background: var(--green-light);
@@ -818,7 +835,7 @@
 
 <!-- AWARD BANNER -->
 <div class="award-banner">
-  <p>🏆 <strong>2025 Community Clinician of the Year</strong> <span>— Middlesex Central District Medical Society</span></p>
+  <p>🏆 <strong>2025 Community Clinician of the Year</strong> <span>— Middlesex Central District Medical Society</span><a href="https://www.google.com/search?q=Nana+McMahon+MD+Concord+MA+reviews" class="review-link" target="_blank" rel="noopener">⭐ See our Google reviews →</a></p>
 </div>
 
 <!-- NAV -->
@@ -864,6 +881,10 @@
         <div class="trust-item">
           <span class="trust-num">NCQA</span>
           <span class="trust-label">Recognized Patient-Centered Care</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-num">🏥 Emerson</span>
+          <span class="trust-label">Hospital Affiliation, Concord MA</span>
         </div>
       </div>
     </div>
@@ -1222,11 +1243,11 @@
           <div class="cd-icon">🕐</div>
           <div>
             <div class="cd-label">Office Hours</div>
-            <table class="hours-tbl">
-              <tr><td>Monday – Friday</td><td>8:30 AM – 5:30 PM</td></tr>
-              <tr><td>Saturday – Sunday</td><td>Urgent care available</td></tr>
-              <tr><td>After Hours</td><td>Call (978) 369-5050</td></tr>
-            </table>
+            <div class="hours-tbl">
+              <div class="hours-row"><span class="hr-label">Monday – Friday</span><span class="hr-val">8:30 AM – 5:30 PM</span></div>
+              <div class="hours-row"><span class="hr-label">Saturday – Sunday</span><span class="hr-val">Urgent care available</span></div>
+              <div class="hours-row"><span class="hr-label">After Hours</span><span class="hr-val">Call (978) 369-5050</span></div>
+            </div>
           </div>
         </div>
         <div class="cd">

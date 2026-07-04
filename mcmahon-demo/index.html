@@ -100,15 +100,6 @@
     letter-spacing: 0.04em;
   }
   .award-banner span { opacity: 0.85; font-weight: 400; }
-  .award-banner .review-link {
-    color: #fff;
-    opacity: 0.9;
-    text-decoration: underline;
-    text-underline-offset: 2px;
-    margin-left: 10px;
-    white-space: nowrap;
-  }
-  .award-banner .review-link:hover { opacity: 1; }
 
   /* ── HERO ── */
   .hero {
@@ -137,11 +128,19 @@
   .hero-inner {
     max-width: 1120px;
     margin: 0 auto;
-    padding: 20px 32px 32px;
+    padding: 28px 32px 32px;
     display: grid;
     grid-template-columns: 1fr 380px;
     gap: 64px;
     align-items: center;
+  }
+
+  .eyebrow-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 22px;
   }
 
   .hero-eyebrow {
@@ -154,10 +153,22 @@
     font-weight: 600;
     padding: 6px 14px;
     border-radius: 100px;
-    margin-bottom: 22px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
   }
+
+  .review-badge {
+    display: inline-flex;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--navy-mid);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+  }
+  .review-badge:hover { border-color: var(--navy-mid); }
 
   .hero-eyebrow .pulse {
     width: 6px; height: 6px;
@@ -835,7 +846,7 @@
 
 <!-- AWARD BANNER -->
 <div class="award-banner">
-  <p>🏆 <strong>2025 Community Clinician of the Year</strong> <span>— Middlesex Central District Medical Society</span><a href="https://www.google.com/search?q=Nana+McMahon+MD+Concord+MA+reviews" class="review-link" target="_blank" rel="noopener">⭐ See our Google reviews →</a></p>
+  <p>🏆 <strong>2025 Community Clinician of the Year</strong> <span>— Middlesex Central District Medical Society</span></p>
 </div>
 
 <!-- NAV -->
@@ -859,9 +870,12 @@
 <section class="hero">
   <div class="hero-inner">
     <div>
-      <div class="hero-eyebrow">
-        <span class="pulse"></span>
-        Now accepting new patients
+      <div class="eyebrow-row">
+        <div class="hero-eyebrow">
+          <span class="pulse"></span>
+          Now accepting new patients
+        </div>
+        <a href="https://www.google.com/search?q=Nana+McMahon+MD+Concord+MA+reviews" class="review-badge" target="_blank" rel="noopener">⭐ See our Google reviews →</a>
       </div>
       <h1>Pediatric care <em>rooted in</em> Concord since 1987</h1>
       <p class="hero-desc">Dr. Nana G. McMahon provides compassionate, evidence-based care for infants, children, adolescents, and college-age patients — in partnership with every family she serves.</p>

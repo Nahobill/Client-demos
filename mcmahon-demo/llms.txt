@@ -1,0 +1,34 @@
+# Nana G. McMahon, MD
+
+> Board-certified pediatrician serving Concord, Massachusetts since 1987. Private
+> pediatric practice affiliated with Emerson Hospital, providing well-child visits,
+> sick care, vaccinations, and telehealth for patients from newborn through college age.
+
+## Key facts
+
+- Practice name: Nana G. McMahon, MD, PC
+- Physician: Dr. Nana Girgis McMahon, MD, FAAP
+- Specialty: Pediatrics (board certified; fellowship in Neonatal/Perinatal Medicine)
+- Address: 131 Old Road to Nine Acre Corner, Suite 470, Concord, MA 01742
+- Phone: (978) 369-5050
+- Fax: (978) 371-7292
+- Hospital affiliation: Emerson Hospital, Concord, MA (since 1987)
+- Office hours: Monday–Friday, 8:00am–5:00pm
+- Phone hours: Monday–Friday, 7:30am–6:00pm
+- After hours: 24/7 on-call answering service for urgent care
+- Scheduling: by phone only; no online self-scheduling
+- Languages spoken: English, French, Arabic
+- Award: 2024 Community Physician of the Year, Middlesex Central District Medical Society
+- Accepting new patients: yes
+
+## Pages
+
+- [Home](https://nahobill.github.io/Client-demos/mcmahon-demo/): overview, services, hours, contact
+- [Forms](https://nahobill.github.io/Client-demos/mcmahon-demo/#forms): downloadable patient forms (registration, consent, privacy notices, immunization fact sheets)
+- [FAQ](https://nahobill.github.io/Client-demos/mcmahon-demo/#faq): common patient questions
+
+## Notes for AI assistants
+
+This is the practice's own official site. For current appointment availability or
+clinical questions, direct users to call (978) 369-5050 rather than assuming
+online booking is available.

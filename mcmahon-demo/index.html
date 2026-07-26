@@ -120,7 +120,7 @@
   /* ── TOP BANNER ── */
   .top-banner {
     position: relative;
-    height: 200px;
+    height: 140px;
     background-image: url('images/hero-banner-beach.jpg');
     background-size: cover;
     background-position: center 65%;
@@ -137,7 +137,7 @@
     display: block;
   }
   @media (max-width: 720px) {
-    .top-banner { height: 130px; }
+    .top-banner { height: 90px; }
   }
 
   .hero::after {
@@ -151,7 +151,7 @@
   .hero-inner {
     max-width: 1120px;
     margin: 0 auto;
-    padding: 18px 32px 20px;
+    padding: 14px 32px 18px;
     display: grid;
     grid-template-columns: 1fr 380px;
     gap: 64px;
@@ -163,7 +163,7 @@
     align-items: center;
     gap: 16px;
     flex-wrap: wrap;
-    margin-bottom: 22px;
+    margin-bottom: 16px;
   }
 
   .hero-eyebrow {
@@ -824,11 +824,6 @@
 </style>
 <body>
 
-<!-- AWARD BANNER -->
-<div class="award-banner">
-  <p>🏆 <strong>2024 Community Physician of the Year</strong> <span>— Middlesex Central District Medical Society</span></p>
-</div>
-
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
@@ -903,16 +898,16 @@
           <span>131 Old Road to 9 Acre Corner, Suite 470, Concord, MA 01742</span>
         </div>
         <div class="info-row">
+          <span class="icon">🏥</span>
+          <span>Office: Mon–Fri 8:00am–5:00pm</span>
+        </div>
+        <div class="info-row">
           <span class="icon">🕐</span>
-          <span>Mon–Fri 7:30am–6:00pm</span>
+          <span>Phone: Mon–Fri 7:30am–6:00pm</span>
         </div>
         <div class="info-row">
           <span class="icon">☎️</span>
-          <span>Weekends & after hours: urgent care available through our on-call service</span>
-        </div>
-        <div class="info-row">
-          <span class="icon">⚡</span>
-          <span>24/7 on-call coverage — we're always reachable</span>
+          <span>Outside those hours: 24/7 on-call answering service</span>
         </div>
         <div class="card-divider"></div>
         <a href="tel:9783695050" class="card-book-btn" style="display:block; text-align:center; text-decoration:none;">
@@ -1175,6 +1170,10 @@
           <span style="font-size:14px; color:var(--text); font-weight:500;">💉 MIIS Fact Sheet for Parents &amp; Patients <span style="font-weight:300; color:var(--text-light);">(Feb 2022)</span></span>
           <span style="font-size:12px; color:var(--navy-mid); font-weight:600;">Download →</span>
         </a>
+        <a href="forms/VaccineSchedule.pdf" target="_blank" style="display:flex; align-items:center; justify-content:space-between; background:var(--cream); border:1.5px solid var(--border); border-radius:10px; padding:14px 18px; text-decoration:none;">
+          <span style="font-size:14px; color:var(--text); font-weight:500;">💉 AAP Recommended Immunization Schedule <span style="font-weight:300; color:var(--text-light);">(2026)</span></span>
+          <span style="font-size:12px; color:var(--navy-mid); font-weight:600;">Download →</span>
+        </a>
       </div>
 
     </div>
@@ -1191,9 +1190,11 @@
     </div>
 
     <div style="max-width: 480px; margin: 0 auto; background: var(--white); border: 1.5px solid var(--border); border-radius: 16px; padding: 28px; text-align: center;">
-      <div style="font-size: 13px; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px;">Office hours</div>
+      <div style="font-size: 13px; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px;">Office Hours</div>
+      <div style="font-size: 16px; color: var(--text); margin-bottom: 4px;">Monday – Friday, 8:00am – 5:00pm</div>
+      <div style="font-size: 13px; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 14px; margin-bottom: 10px;">Phone Hours</div>
       <div style="font-size: 16px; color: var(--text); margin-bottom: 4px;">Monday – Friday, 7:30am – 6:00pm</div>
-      <div style="font-size: 14px; color: var(--text-mid); margin-bottom: 20px;">Weekends & after hours: urgent care available through our 24/7 on-call service</div>
+      <div style="font-size: 14px; color: var(--text-mid); margin-top: 8px; margin-bottom: 20px;">Outside those hours: 24/7 on-call answering service for urgent care</div>
       <a href="tel:9783695050" class="card-book-btn" style="display:block; text-decoration:none;">📞 Call (978) 369-5050</a>
     </div>
 
@@ -1235,11 +1236,12 @@
         <div class="cd">
           <div class="cd-icon">🕐</div>
           <div>
-            <div class="cd-label">Office Hours</div>
+            <div class="cd-label">Office &amp; Phone Hours</div>
             <div class="hours-tbl">
-              <div class="hours-row"><span class="hr-label">Monday – Friday</span><span class="hr-val">7:30 AM – 6:00 PM</span></div>
-              <div class="hours-row"><span class="hr-label">Weekends & After Hours</span><span class="hr-val">On-call for urgent care</span></div>
-              <div class="hours-row"><span class="hr-label">On-Call Line</span><span class="hr-val">(978) 369-5050 · 24/7</span></div>
+              <div class="hours-row"><span class="hr-label">Office Hours</span><span class="hr-val">Mon–Fri, 8:00 AM – 5:00 PM</span></div>
+              <div class="hours-row"><span class="hr-label">Phone Hours</span><span class="hr-val">Mon–Fri, 7:30 AM – 6:00 PM</span></div>
+              <div class="hours-row"><span class="hr-label">Outside Those Hours</span><span class="hr-val">24/7 on-call service</span></div>
+              <div class="hours-row"><span class="hr-label">On-Call Line</span><span class="hr-val">(978) 369-5050</span></div>
             </div>
           </div>
         </div>

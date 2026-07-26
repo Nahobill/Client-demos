@@ -117,6 +117,29 @@
     border-radius: 50%;
   }
 
+  /* ── TOP BANNER ── */
+  .top-banner {
+    position: relative;
+    height: 300px;
+    background-image: url('images/hero-banner-beach.jpg');
+    background-size: cover;
+    background-position: center 65%;
+    overflow: hidden;
+  }
+  .top-banner::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(61,84,66,0.25) 0%, rgba(61,84,66,0.05) 45%, var(--cream) 96%);
+  }
+  .top-banner-wave {
+    position: absolute;
+    bottom: -1px; left: 0; width: 100%; height: 60px;
+    display: block;
+  }
+  @media (max-width: 720px) {
+    .top-banner { height: 200px; }
+  }
+
   .hero::after {
     content: '';
     position: absolute;
@@ -619,6 +642,7 @@
     font-size: 22px; color: #fff; font-weight: 400;
     flex-shrink: 0;
   }
+  img.team-avatar { object-fit: cover; }
   .team-name { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
   .team-title { font-size: 13px; color: var(--navy-mid); font-weight: 500; margin-bottom: 8px; }
   .team-creds { font-size: 13px; color: var(--text-mid); line-height: 1.55; font-weight: 300; }
@@ -866,6 +890,13 @@
   </div>
 </nav>
 
+<!-- TOP BANNER -->
+<div class="top-banner">
+  <svg class="top-banner-wave" viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 C240,60 480,0 720,20 C960,40 1200,60 1440,20 L1440,60 L0,60 Z" fill="#faf9f7"></path>
+  </svg>
+</div>
+
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
@@ -1035,7 +1066,7 @@
       </div>
       <div class="team-cards">
         <div class="team-card">
-          <div class="team-avatar">NM</div>
+          <img class="team-avatar" src="images/nana-mcmahon-headshot.jpg" alt="Dr. Nana G. McMahon, MD">
           <div>
             <div class="team-name">Dr. Nana G. McMahon, MD</div>
             <div class="team-title">Founder & Lead Pediatrician</div>

@@ -4,23 +4,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dr. Nana G. McMahon, MD — Pediatrics in Concord, MA</title>
-<meta name="description" content="Board-certified pediatrician serving Concord, MA since 1987. Dr. Nana G. McMahon offers well-child visits, sick care, vaccinations, and telehealth. Book online today.">
+<meta name="description" content="Board-certified pediatrician serving Concord, MA since 1987. Dr. Nana G. McMahon offers well-child visits, sick care, vaccinations, and telehealth. Call to schedule.">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap');
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --navy: #3d5442;
-    --navy-mid: #5b7a62;
-    --cream: #faf9f7;
+    --navy: #2c4a5e;
+    --navy-mid: #4a7f9e;
+    --cream: #f5f8fa;
     --white: #ffffff;
-    --text: #1c2319;
-    --text-mid: #4a5548;
-    --text-light: #7a8a76;
-    --border: #dde6da;
-    --green: #3d5442;
-    --green-light: #e8f0ea;
+    --text: #1c2733;
+    --text-mid: #4a5a66;
+    --text-light: #7a8f9e;
+    --border: #d8e4ea;
+    --green: #2c4a5e;
+    --green-light: #e5eef3;
   }
 
   html { scroll-behavior: smooth; }
@@ -120,7 +120,7 @@
   /* ── TOP BANNER ── */
   .top-banner {
     position: relative;
-    height: 300px;
+    height: 200px;
     background-image: url('images/hero-banner-beach.jpg');
     background-size: cover;
     background-position: center 65%;
@@ -129,15 +129,15 @@
   .top-banner::before {
     content: '';
     position: absolute; inset: 0;
-    background: linear-gradient(180deg, rgba(61,84,66,0.25) 0%, rgba(61,84,66,0.05) 45%, var(--cream) 96%);
+    background: linear-gradient(180deg, rgba(44,74,94,0.32) 0%, rgba(226,238,244,0.6) 55%, var(--cream) 96%);
   }
   .top-banner-wave {
     position: absolute;
-    bottom: -1px; left: 0; width: 100%; height: 60px;
+    bottom: -1px; left: 0; width: 100%; height: 44px;
     display: block;
   }
   @media (max-width: 720px) {
-    .top-banner { height: 200px; }
+    .top-banner { height: 130px; }
   }
 
   .hero::after {
@@ -151,7 +151,7 @@
   .hero-inner {
     max-width: 1120px;
     margin: 0 auto;
-    padding: 28px 32px 32px;
+    padding: 18px 32px 20px;
     display: grid;
     grid-template-columns: 1fr 380px;
     gap: 64px;
@@ -517,7 +517,7 @@
   .facts-inner {
     max-width: 1120px;
     margin: 0 auto;
-    padding: 36px 32px;
+    padding: 22px 32px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 24px;
@@ -533,7 +533,7 @@
   .fact-text .fact-lab { font-size: 13px; color: var(--text-light); }
 
   /* ── SECTIONS ── */
-  section { padding: 72px 32px; }
+  section { padding: 44px 32px; }
   .section-inner { max-width: 1120px; margin: 0 auto; }
   .section-tag {
     font-size: 11px;
@@ -820,50 +820,6 @@
     .hero-inner, section { padding-left: 20px; padding-right: 20px; }
     .footer-top { grid-template-columns: 1fr; }
   }
-  /* ── TALLY MODAL ── */
-  .tally-modal-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(28, 35, 25, 0.6);
-    z-index: 999;
-    align-items: center;
-    justify-content: center;
-    padding: 24px;
-    backdrop-filter: blur(4px);
-  }
-  .tally-modal-overlay.open { display: flex; }
-  .tally-modal {
-    background: var(--white);
-    border-radius: 20px;
-    width: 100%;
-    max-width: 640px;
-    max-height: 88vh;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    box-shadow: 0 24px 64px rgba(0,0,0,0.25);
-  }
-  .tally-modal-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 24px;
-    border-bottom: 1px solid var(--border);
-    flex-shrink: 0;
-    gap: 12px;
-  }
-  .tally-modal-header h3 { font-size: 17px; font-weight: 600; color: var(--text); }
-  .tally-modal-header p { font-size: 12px; color: var(--text-light); margin-top: 2px; font-weight: 300; }
-  .tally-modal-close {
-    width: 32px; height: 32px; border-radius: 50%;
-    border: 1.5px solid var(--border); background: none;
-    cursor: pointer; font-size: 16px; color: var(--text-mid);
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0; transition: background 0.2s; font-family: 'DM Sans', sans-serif;
-  }
-  .tally-modal-close:hover { background: var(--cream); }
-  .tally-modal-body { overflow-y: auto; flex: 1; padding: 0 8px; }
 
 </style>
 <body>
@@ -884,6 +840,7 @@
       <li><a href="#services">Services</a></li>
       <li><a href="#about">Our Team</a></li>
       <li><a href="#new-patients">New Patients</a></li>
+      <li><a href="#forms">Forms</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><a href="#booking" class="nav-cta">Schedule a Visit</a></li>
     </ul>
@@ -893,7 +850,7 @@
 <!-- TOP BANNER -->
 <div class="top-banner">
   <svg class="top-banner-wave" viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0,30 C240,60 480,0 720,20 C960,40 1200,60 1440,20 L1440,60 L0,60 Z" fill="#faf9f7"></path>
+    <path d="M0,30 C240,60 480,0 720,20 C960,40 1200,60 1440,20 L1440,60 L0,60 Z" fill="#f5f8fa"></path>
   </svg>
 </div>
 
@@ -1125,8 +1082,8 @@
           <div class="np-step">
             <div class="step-num">3</div>
             <div>
-              <h4>Complete registration online</h4>
-              <p>Fill out the new patient registration form on this page — no printing needed. We'll have everything on file before your first visit.</p>
+              <h4>Complete registration forms</h4>
+              <p>Give us a call and we'll mail or have registration forms ready for you, or simply fill them out in person when you arrive for your first visit.</p>
             </div>
           </div>
           <div class="np-step">
@@ -1141,14 +1098,14 @@
 
       <div>
         <div class="np-right-heading">New Patient Registration</div>
-        <p style="font-size: 13px; color: var(--text-mid); font-weight: 300; margin-bottom: 16px; line-height: 1.55;">Complete your registration online before your first visit — no printing, no fax, no hold music.</p>
+        <p style="font-size: 13px; color: var(--text-mid); font-weight: 300; margin-bottom: 16px; line-height: 1.55;">Registration is completed by phone or in person — no online forms required.</p>
 
         <div style="background: var(--white); border: 1.5px solid var(--border); border-radius: 14px; padding: 22px;">
-          <div style="font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 6px;">New Patient Registration Form</div>
-          <div style="font-size: 13px; color: var(--text-mid); font-weight: 300; margin-bottom: 16px; line-height: 1.5;">Takes about 5 minutes. Covers insurance, medical history, and contact information.</div>
-          <button class="card-book-btn" onclick="openTallyModal()" style="border: none; cursor: pointer;">
-            📋 Complete Registration Online
-          </button>
+          <div style="font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 6px;">Ready to register?</div>
+          <div style="font-size: 13px; color: var(--text-mid); font-weight: 300; margin-bottom: 16px; line-height: 1.5;">Call our office and we'll walk you through what's needed, or have forms waiting for your first visit.</div>
+          <a href="tel:9783695050" class="card-book-btn" style="display: block; text-align: center; text-decoration: none;">
+            📞 Call (978) 369-5050
+          </a>
         </div>
 
         <div class="acquainted-box" style="margin-top: 16px;">
@@ -1161,8 +1118,71 @@
   </div>
 </section>
 
+<!-- FORMS -->
+<section id="forms" style="background: var(--white); padding: 44px 32px;">
+  <div class="section-inner">
+    <div style="text-align: center; margin-bottom: 32px;">
+      <span class="section-tag">Resources</span>
+      <h2 style="font-family: 'DM Serif Display', serif; font-size: 34px; color: var(--text); margin-bottom: 10px;">Forms &amp; Documents</h2>
+      <p style="font-size: 15px; color: var(--text-mid); font-weight: 300; max-width: 520px; margin: 0 auto;">Download and print, or fill out in person at your visit — no online submission required.</p>
+    </div>
+
+    <div style="max-width: 760px; margin: 0 auto;">
+
+      <div style="font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--navy-mid); margin-bottom: 10px;">New Patient Forms</div>
+      <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px;">
+        <a href="forms/New-Patient-Registration-Form.pdf" target="_blank" style="display:flex; align-items:center; justify-content:space-between; background:var(--cream); border:1.5px solid var(--border); border-radius:10px; padding:14px 18px; text-decoration:none; transition: border-color .2s;">
+          <span style="font-size:14px; color:var(--text); font-weight:500;">📋 Pediatric Patient Registration Form</span>
+          <span style="font-size:12px; color:var(--navy-mid); font-weight:600;">Download →</span>
+        </a>
+        <a href="forms/Patient-Consent.pdf" target="_blank" style="display:flex; align-items:center; justify-content:space-between; background:var(--cream); border:1.5px solid var(--border); border-radius:10px; padding:14px 18px; text-decoration:none;">
+          <span style="font-size:14px; color:var(--text); font-weight:500;">✍️ Patient Consent</span>
+          <span style="font-size:12px; color:var(--navy-mid); font-weight:600;">Download →</span>
+        </a>
+        <a href="forms/Welcome-to-Our-Practice.pdf" target="_blank" style="display:flex; align-items:center; justify-content:space-between; background:var(--cream); border:1.5px solid var(--border); border-radius:10px; padding:14px 18px; text-decoration:none;">
+          <span style="font-size:14px; color:var(--text); font-weight:500;">👋 Welcome to Our Practice</span>
+          <span style="font-size:12px; color:var(--navy-mid); font-weight:600;">Download →</span>
+        </a>
+      </div>
+
+      <div style="font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--navy-mid); margin-bottom: 10px;">Privacy &amp; Records</div>
+      <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px;">
+        <a href="forms/Notice-of-Privacy-Practices-2020.pdf" target="_blank" style="display:flex; align-items:center; justify-content:space-between; background:var(--cream); border:1.5px solid var(--border); border-radius:10px; padding:14px 18px; text-decoration:none;">
+          <span style="font-size:14px; color:var(--text); font-weight:500;">🔒 Notice of Privacy Practices <span style="font-weight:300; color:var(--text-light);">(2020)</span></span>
+          <span style="font-size:12px; color:var(--navy-mid); font-weight:600;">Download →</span>
+        </a>
+        <a href="forms/Notice-of-Privacy-Practices-2003-2014.pdf" target="_blank" style="display:flex; align-items:center; justify-content:space-between; background:var(--cream); border:1.5px solid var(--border); border-radius:10px; padding:14px 18px; text-decoration:none;">
+          <span style="font-size:14px; color:var(--text); font-weight:500;">🔒 Notice of Privacy Practices <span style="font-weight:300; color:var(--text-light);">(2003–2014)</span></span>
+          <span style="font-size:12px; color:var(--navy-mid); font-weight:600;">Download →</span>
+        </a>
+        <a href="forms/Request-for-Release-of-Records.pdf" target="_blank" style="display:flex; align-items:center; justify-content:space-between; background:var(--cream); border:1.5px solid var(--border); border-radius:10px; padding:14px 18px; text-decoration:none;">
+          <span style="font-size:14px; color:var(--text); font-weight:500;">📁 Request for Release of Records</span>
+          <span style="font-size:12px; color:var(--navy-mid); font-weight:600;">Download →</span>
+        </a>
+      </div>
+
+      <div style="font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--navy-mid); margin-bottom: 10px;">Mass HIway &amp; Immunization</div>
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <a href="forms/Mass-HIway-Fact-Sheet-and-Consent.pdf" target="_blank" style="display:flex; align-items:center; justify-content:space-between; background:var(--cream); border:1.5px solid var(--border); border-radius:10px; padding:14px 18px; text-decoration:none;">
+          <span style="font-size:14px; color:var(--text); font-weight:500;">🔗 Mass HIway Fact Sheet &amp; Consent</span>
+          <span style="font-size:12px; color:var(--navy-mid); font-weight:600;">Download →</span>
+        </a>
+        <a href="forms/MIIS-Fact-Sheet-Standard.pdf" target="_blank" style="display:flex; align-items:center; justify-content:space-between; background:var(--cream); border:1.5px solid var(--border); border-radius:10px; padding:14px 18px; text-decoration:none;">
+          <span style="font-size:14px; color:var(--text); font-weight:500;">💉 MIIS Fact Sheet <span style="font-weight:300; color:var(--text-light);">(standard)</span></span>
+          <span style="font-size:12px; color:var(--navy-mid); font-weight:600;">Download →</span>
+        </a>
+        <a href="forms/MIIS-Fact-Sheet-Feb2022.pdf" target="_blank" style="display:flex; align-items:center; justify-content:space-between; background:var(--cream); border:1.5px solid var(--border); border-radius:10px; padding:14px 18px; text-decoration:none;">
+          <span style="font-size:14px; color:var(--text); font-weight:500;">💉 MIIS Fact Sheet for Parents &amp; Patients <span style="font-weight:300; color:var(--text-light);">(Feb 2022)</span></span>
+          <span style="font-size:12px; color:var(--navy-mid); font-weight:600;">Download →</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- BOOKING SECTION -->
-<section id="booking" style="background: var(--cream); padding: 80px 32px;">
+<section id="booking" style="background: var(--cream); padding: 44px 32px;">
   <div class="section-inner">
     <div style="text-align: center; margin-bottom: 40px;">
       <span class="section-tag">Call to Schedule</span>
@@ -1264,7 +1284,6 @@
         <h4>Patient Resources</h4>
         <ul>
           <li><a href="#">Patient Portal Login</a></li>
-          <li><a href="#">Registration Forms</a></li>
           <li><a href="#">Privacy Practices</a></li>
           <li><a href="#">Medical Records Request</a></li>
           <li><a href="#">For Parents</a></li>
@@ -1277,41 +1296,4 @@
     </div>
   </div>
 </footer>
-
-<!-- TALLY REGISTRATION MODAL -->
-<div class="tally-modal-overlay" id="tally-modal" onclick="closeTallyModal(event)">
-  <div class="tally-modal">
-    <div class="tally-modal-header">
-      <div>
-        <h3>New Patient Registration</h3>
-        <p>Takes about 5 minutes · Information is kept private and secure</p>
-      </div>
-      <button class="tally-modal-close" onclick="closeTallyModal()">✕</button>
-    </div>
-    <div class="tally-modal-body">
-      <iframe data-tally-src="https://tally.so/embed/BzL5PK?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="1523" frameborder="0" marginheight="0" marginwidth="0" title="New Patient Registration"></iframe>
-    </div>
-  </div>
-</div>
-
-<script>
-  // Tally embed loader
-  var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}
-
-  function openTallyModal() {
-    document.getElementById('tally-modal').classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeTallyModal(e) {
-    if (!e || e.target === document.getElementById('tally-modal')) {
-      document.getElementById('tally-modal').classList.remove('open');
-      document.body.style.overflow = '';
-    }
-  }
-
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') closeTallyModal();
-  });
-</script>
 

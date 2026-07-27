@@ -104,7 +104,9 @@
 
   /* ── NAV ── */
   nav {
-    background: var(--navy);
+    background: rgba(28, 45, 58, 0.55);
+    backdrop-filter: blur(10px) saturate(140%);
+    -webkit-backdrop-filter: blur(10px) saturate(140%);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -190,7 +192,8 @@
   /* ── TOP BANNER ── */
   .top-banner {
     position: relative;
-    height: 140px;
+    height: 206px;
+    margin-top: -66px;
     background-image: url('images/hero-banner-beach.jpg');
     background-size: cover;
     background-position: center 32%;
@@ -207,7 +210,7 @@
     display: block;
   }
   @media (max-width: 720px) {
-    .top-banner { height: 90px; }
+    .top-banner { height: 156px; }
   }
 
   .hero::after {

@@ -174,7 +174,6 @@
   /* ── HERO ── */
   .hero {
     position: relative;
-    overflow: hidden;
     background: var(--cream);
   }
 
@@ -193,7 +192,7 @@
     height: 260px;
     background-image: url('images/hero-banner-beach.jpg');
     background-size: cover;
-    background-position: center 32%;
+    background-position: 28% 26%;
     overflow: hidden;
   }
   .top-banner::before {
@@ -226,6 +225,7 @@
     grid-template-columns: 1fr 380px;
     gap: 64px;
     align-items: center;
+    position: relative;
   }
 
   .eyebrow-row {
@@ -233,14 +233,22 @@
     align-items: center;
     gap: 16px;
     flex-wrap: wrap;
-    margin-bottom: 16px;
+    position: absolute;
+    top: -130px;
+    left: 0;
+    z-index: 5;
+  }
+  @media (max-width: 720px) {
+    .eyebrow-row { top: -70px; }
   }
 
   .hero-eyebrow {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: var(--green-light);
+    background: rgba(255,255,255,0.72);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     color: var(--navy);
     font-size: 12px;
     font-weight: 600;
@@ -248,6 +256,7 @@
     border-radius: 100px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
+    box-shadow: 0 2px 10px rgba(28,45,58,0.08);
   }
 
   .review-badge {
@@ -260,6 +269,7 @@
     letter-spacing: 0.02em;
     border-bottom: 1px solid transparent;
     transition: border-color 0.2s;
+    text-shadow: 0 1px 8px rgba(255,255,255,0.6);
   }
   .review-badge:hover { border-color: var(--navy-mid); }
 
@@ -931,7 +941,7 @@
         </div>
         <a href="https://www.google.com/search?q=Nana+McMahon+MD+Concord+MA+reviews" class="review-badge" target="_blank" rel="noopener">⭐ See our Google reviews →</a>
       </div>
-      <h1>Pediatric care <em>rooted in</em> Concord since 1987</h1>
+      <h1 style="margin-top: 12px;">Pediatric care <em>rooted in</em> Concord since 1987</h1>
       <p class="hero-desc">Dr. Nana G. McMahon provides compassionate, evidence-based care for infants, children, adolescents, and college-age patients — in partnership with every family she serves.</p>
       <div class="hero-actions">
         <a href="tel:9783695050" class="btn-gold"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg> Call to Schedule — (978) 369-5050</a>

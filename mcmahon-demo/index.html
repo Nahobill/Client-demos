@@ -104,9 +104,7 @@
 
   /* ── NAV ── */
   nav {
-    background: rgba(28, 45, 58, 0.55);
-    backdrop-filter: blur(10px) saturate(140%);
-    -webkit-backdrop-filter: blur(10px) saturate(140%);
+    background: var(--navy);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -177,14 +175,7 @@
   .hero {
     position: relative;
     overflow: hidden;
-    margin-top: -66px;
-    padding-top: 66px;
-    background-image:
-      linear-gradient(180deg, rgba(44,74,94,0.34) 0%, rgba(226,238,244,0.55) 34%, var(--cream) 62%, var(--cream) 100%),
-      url('images/hero-banner-beach.jpg');
-    background-size: cover, cover;
-    background-position: top, center 32%;
-    background-repeat: no-repeat, no-repeat;
+    background: var(--cream);
   }
 
   .hero::before {
@@ -194,6 +185,29 @@
     width: 480px; height: 480px;
     background: radial-gradient(circle, rgba(91,122,98,0.1) 0%, transparent 70%);
     border-radius: 50%;
+  }
+
+  /* ── TOP BANNER ── */
+  .top-banner {
+    position: relative;
+    height: 140px;
+    background-image: url('images/hero-banner-beach.jpg');
+    background-size: cover;
+    background-position: center 32%;
+    overflow: hidden;
+  }
+  .top-banner::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(44,74,94,0.32) 0%, rgba(226,238,244,0.6) 55%, var(--cream) 96%);
+  }
+  .top-banner-wave {
+    position: absolute;
+    bottom: -1px; left: 0; width: 100%; height: 44px;
+    display: block;
+  }
+  @media (max-width: 720px) {
+    .top-banner { height: 90px; }
   }
 
   .hero::after {
@@ -899,6 +913,13 @@
   </div>
 </nav>
 
+<!-- TOP BANNER -->
+<div class="top-banner" role="img" aria-label="Ocean waves along the New England coast">
+  <svg class="top-banner-wave" viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,30 C240,60 480,0 720,20 C960,40 1200,60 1440,20 L1440,60 L0,60 Z" fill="#f5f8fa"></path>
+  </svg>
+</div>
+
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
@@ -913,7 +934,7 @@
       <h1>Pediatric care <em>rooted in</em> Concord since 1987</h1>
       <p class="hero-desc">Dr. Nana G. McMahon provides compassionate, evidence-based care for infants, children, adolescents, and college-age patients — in partnership with every family she serves.</p>
       <div class="hero-actions">
-        <a href="tel:9783695050" class="btn-gold">📞 Call to Schedule — (978) 369-5050</a>
+        <a href="tel:9783695050" class="btn-gold"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg> Call to Schedule — (978) 369-5050</a>
         <a href="#contact" class="btn-ghost">📍 Visit Us</a>
       </div>
       <div class="hero-trust">
@@ -956,12 +977,12 @@
           <span>Phone: Mon–Fri 7:30am–6:00pm</span>
         </div>
         <div class="info-row">
-          <span class="icon">☎️</span>
+          <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
           <span>Outside those hours: 24/7 on-call answering service</span>
         </div>
         <div class="card-divider"></div>
         <a href="tel:9783695050" class="card-book-btn" style="display:block; text-align:center; text-decoration:none;">
-          📞 Call to Schedule — (978) 369-5050
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:-2px; margin-right:6px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>Call to Schedule — (978) 369-5050
         </a>
         <div class="card-portal-label" style="text-align:center; margin-top: 10px;">All appointments are scheduled by phone</div>
       </div>
@@ -987,7 +1008,7 @@
       </div>
     </div>
     <div class="fact-item">
-      <span class="fact-icon">📞</span>
+      <span class="fact-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
       <div class="fact-text">
         <span class="fact-val">24/7 On-Call Team</span>
         <span class="fact-lab">After hours: (978) 369-5050</span>
@@ -1149,7 +1170,7 @@
           <div style="font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 6px;">Ready to register?</div>
           <div style="font-size: 13px; color: var(--text-mid); font-weight: 300; margin-bottom: 16px; line-height: 1.5;">Call our office and we'll walk you through what's needed, or have forms waiting for your first visit.</div>
           <a href="tel:9783695050" class="card-book-btn" style="display: block; text-align: center; text-decoration: none;">
-            📞 Call (978) 369-5050
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:-2px; margin-right:6px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>Call (978) 369-5050
           </a>
         </div>
 
@@ -1245,11 +1266,11 @@
       <div style="font-size: 13px; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 14px; margin-bottom: 10px;">Phone Hours</div>
       <div style="font-size: 16px; color: var(--text); margin-bottom: 4px;">Monday – Friday, 7:30am – 6:00pm</div>
       <div style="font-size: 14px; color: var(--text-mid); margin-top: 8px; margin-bottom: 20px;">Outside those hours: 24/7 on-call answering service for urgent care</div>
-      <a href="tel:9783695050" class="card-book-btn" style="display:block; text-decoration:none;">📞 Call (978) 369-5050</a>
+      <a href="tel:9783695050" class="card-book-btn" style="display:block; text-decoration:none;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:-2px; margin-right:6px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>Call (978) 369-5050</a>
     </div>
 
     <div style="display: flex; justify-content: center; gap: 16px; margin-top: 24px; flex-wrap: wrap;">
-      <div style="font-size: 13px; color: var(--text-light);">⚡ Same-day sick visits reserved daily · ☎️ 24/7 on-call coverage</div>
+      <div style="font-size: 13px; color: var(--text-light);">⚡ Same-day sick visits reserved daily · <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-1px; margin-right:2px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>24/7 on-call coverage</div>
     </div>
   </div>
 </section>
@@ -1375,7 +1396,7 @@
           </div>
         </div>
         <div class="cd">
-          <div class="cd-icon">📞</div>
+          <div class="cd-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></div>
           <div>
             <div class="cd-label">Phone</div>
             <div class="cd-val"><a href="tel:9783695050">(978) 369-5050</a></div>
